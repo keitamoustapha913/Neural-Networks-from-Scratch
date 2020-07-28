@@ -1,4 +1,6 @@
 .vscode
+./__pycache__
 __pycache__/
-.__pycache__
 *.pyc
+init_funct_nnfs.cpython-37.pyc
+nnfs.cpython-37.pyc
