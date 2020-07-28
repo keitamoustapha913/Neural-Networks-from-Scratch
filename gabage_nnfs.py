@@ -25,3 +25,25 @@ biases = [ 2.0 , 3.0, 0.5 ]
 layer_outputs = [] # output of current layer
 listed_zip = zip(weights, biases)
 print ( list( listed_zip) )
+
+
+'''
+
+# using zips and loops
+layer_outputs = [] # output of current layer
+for neuron_weights, neuron_bias in zip(weights, biases):
+    neuron_output = 0 #Output of gven neuron
+    for n_input, weight in zip(inputs,neuron_weights):
+        neuron_output += n_input*weight
+    neuron_output += neuron_bias
+    layer_outputs.append(neuron_output)
+
+'''
+
+
+'''
+output =  [ inputs[0]*weights1[0] + inputs[1]*weights1[1] + inputs[2]*weights1[2] + inputs[3]*weights1[3]+ bias1,
+            inputs[0]*weights2[0] + inputs[1]*weights2[1] + inputs[2]*weights2[2] + inputs[3]*weights2[3]+ bias2, 
+            inputs[0]*weights3[0] + inputs[1]*weights3[1] + inputs[2]*weights3[2] + inputs[3]*weights3[3]+ bias3 ]
+
+'''

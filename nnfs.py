@@ -3,6 +3,10 @@ From Sentdex Youtube channel
 Creates 3 neurons, with 4 inputs using vector and matrices.
 Associated YT NNFS tutorial: https://www.youtube.com/watch?v=lGLto9Xd7bU
 '''
+import numpy as np 
+
+
+
 
 inputs = [1.2, 5.1, 2.1 , 2 ]
 
@@ -10,26 +14,12 @@ weights = [ [0.2, 0.8, -0.5, 1.0],
             [0.5, -0.91, 0.26, -0.5] ,
             [-0.26, -0.27, 0.17, 0.87] ]
 
-
+w1 = [0.2, 0.8, -0.5, 1.0]
+bs = [ 2 ]
 biases = [ 2.0 , 3.0, 0.5 ]
 
 
-# using zips and loops
-layer_outputs = [] # output of current layer
-for neuron_weights, neuron_bias in zip(weights, biases):
-    neuron_output = 0 #Output of gven neuron
-    for n_input, weight in zip(inputs,neuron_weights):
-        neuron_output += n_input*weight
-    neuron_output += neuron_bias
-    layer_outputs.append(neuron_output)
+# Using Dot product approach for one dimensional array and numpy
+output = np.dot(w1 , inputs) + bs
 
-
-
-'''
-output =  [ inputs[0]*weights1[0] + inputs[1]*weights1[1] + inputs[2]*weights1[2] + inputs[3]*weights1[3]+ bias1,
-            inputs[0]*weights2[0] + inputs[1]*weights2[1] + inputs[2]*weights2[2] + inputs[3]*weights2[3]+ bias2, 
-            inputs[0]*weights3[0] + inputs[1]*weights3[1] + inputs[2]*weights3[2] + inputs[3]*weights3[3]+ bias3 ]
-
-'''
-
-print(layer_outputs)
+print( output )
