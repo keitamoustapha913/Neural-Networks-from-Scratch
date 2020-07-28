@@ -1,7 +1,7 @@
 '''
 From Sentdex Youtube channel
 Creates layers with batches of inputs or features or samples.
-Associated YT NNFS tutorial: https://www.youtube.com/watch?v=lGLto9Xd7bU
+Associated YT tutorial: https://youtu.be/TEWy9vZcxW4
 '''
 import numpy as np 
 
@@ -16,8 +16,15 @@ weights = [ [0.2, 0.8, -0.5, 1.0],
 
 biases = [ 2.0 , 3.0, 0.5 ]
 
+# adding an additional layer 
+weights2 = [ [0.1, -0.14 , 0.5 ],
+            [-0.5, 0.12 , -0.33 ] ,
+            [-0.44, 0.73 , -0.13] ]
 
-# Using Dot product approach for a layer
+biases2 = [ -1, 2 , -0.5 ]
 
-output = np.dot(inputs , np.array(weights).T ) + biases
-print( output )
+
+# Using Dot product approach for two layer
+layer1_output = np.dot(inputs , np.array(weights).T ) + biases
+layer2_output = np.dot(layer1_output , np.array(weights2).T ) + biases2
+print( layer2_output )
