@@ -1,0 +1,2 @@
+From the neurons , coding from scratch from with no libraries to the use of libraries to study the learn how neural neetworks works on the deep level.
+To understand better what actually happens in the neural networks and deep learning.
