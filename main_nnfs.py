@@ -6,32 +6,24 @@ Using a step functions as an activation function in a neural networks
     sigmoid linear activation function
     step linear activation function
 Associated YT tutorial: https://youtu.be/TEWy9vZcxW4
-'''
-import numpy as np 
 
-np.random.seed(0)
+https://gist.github.com/Sentdex/454cb20ec5acf0e76ee8ab8448e6266c
+
+'''
+
+
+import numpy as np 
+from init_funct_nnfs import *
+
+init_nnfs()
 
 # inputs
 X =  [ [1.0 , 2.0 , 3.0 , 2.5 ],
             [2.0 , 5.0 , -1.0 , 2.0 ],
             [-1.5, 2.7 , 3.3 , -0.8 ] ]
 
-'''
-inputs = [ 0 , 2 , -1 , 3.3 , -2.7 , 1.1 , 2.2 , -100]
-outputs = []
-
-for i in inputs:
-    if i > 0 :
-        outputs.append(i)
-    elif i <= 0 :
-        output.append(0)
-''' 
-# OR
-
-'''
-for i in inputs:
-    outputs.append( max(0 , i))
-'''
+# For a 100 features sets of 3 classes
+X , y = create_spiral_data( 100 , 3 )
 
 
 class Layer_Dense:
@@ -47,17 +39,18 @@ class Activation_ReLU:
     def forward(self, inputs):
         self.output = np.maximum(0 , inputs)
 
-    
 
-layer1 = Layer_Dense(4, 5 )
-layer2 = Layer_Dense(5 , 2 )
+layer1 = Layer_Dense(2, 5 )
+activation1 = Activation_ReLU()
 
 
 layer1.forward(X)
 print( layer1.output)
 
-layer2.forward( layer1.output)
-print( layer2.output)
+activation1.forward(layer1.output)
+print( activation1.output)
+
+
 
 
 
